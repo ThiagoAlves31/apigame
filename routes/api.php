@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::namespace('Api')->name('api.')->group(function(){
+    Route::prefix('fighter')->group(function(){
+        Route::get('/','FighterController@index')->name('fighters_index');
+    });
+});
+
+//Rotes fighters
+Route::namespace('Api')->name('api.')->group(function(){
+    Route::prefix('battles')->group(function(){
+        Route::get('/','BattlerController@index')->name('blattes_index');
+    });
 });
