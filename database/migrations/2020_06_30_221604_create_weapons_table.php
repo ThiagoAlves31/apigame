@@ -15,17 +15,12 @@ class CreateWeaponsTable extends Migration
     {
         Schema::create('weapons', function (Blueprint $table) {
             $table->id();
-            $table->string('description')->unique();
+            $table->string('description');
             $table->integer('attack');
             $table->integer('defense');
             $table->integer('dice');
-            
-            $table->unsignedBigInteger('fighters_id')->nullable();
-            $table->foreign('fighters_id')
-                ->references('id')
-                ->on('fighters');
-            
-                $table->timestamps();
+            $table->integer('fighter_id');
+            $table->timestamps();
         });
     }
 

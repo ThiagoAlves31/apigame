@@ -21,11 +21,25 @@ Route::apiResource('fighter','Api\FighterController');
         Route::get('/','FighterController@index')->name('fighters_index');
     });
 });
+*/
 
-//Rotes fighters
 Route::namespace('Api')->name('api.')->group(function(){
     Route::prefix('battles')->group(function(){
         Route::get('/','BattlerController@index')->name('blattes_index');
+        Route::post('/','BattlerController@create')->name('blattes_create');
     });
-}); 
-*/
+});
+
+Route::namespace('Api')->name('api.')->group(function(){
+    Route::prefix('rounds')->group(function(){
+        Route::get('/','RoundController@index')->name('rounds_index');
+        Route::post('/{battle_id}','RoundController@create')->name('rounds_create');
+    });
+});
+
+Route::namespace('Api')->name('api.')->group(function(){
+    Route::prefix('weapons')->group(function(){
+        Route::get('/','WeaponController@index')->name('weapons_index');
+        //Route::post('/{battle_id}','RoundController@create')->name('weapons_create');
+    });
+});
