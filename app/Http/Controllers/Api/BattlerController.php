@@ -26,7 +26,7 @@ class BattlerController extends Controller
         $newBattle->human_id = $human;
         $newBattle->orc_id = $orc;
         $newBattle->save();
-        return response()->json(Battle::all(),200);
+        return response()->json(Battle::find($newBattle->id),200);
     }
 
     public function store(Request $request)
