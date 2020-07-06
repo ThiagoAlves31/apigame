@@ -28,8 +28,9 @@ class CreateBattlesTable extends Migration
                 ->references('id')
                 ->on('fighters');
 
-            $table->integer('last_round_id')->default(0);
-            $table->integer('rounds')->default(0);
+            $table->string('win')->nullable();
+            $table->integer('win_id')->unsigned()->nullable();;
+            $table->integer('rounds')->unsigned()->nullable();;
             
             $table->timestamps();
         });

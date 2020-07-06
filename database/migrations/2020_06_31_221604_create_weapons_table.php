@@ -19,7 +19,12 @@ class CreateWeaponsTable extends Migration
             $table->integer('attack');
             $table->integer('defense');
             $table->integer('dice');
-            $table->integer('fighter_id');
+            
+            $table->unsignedBigInteger('fighter_id')->unsigned()->nullable();
+            $table->foreign('fighter_id')
+                ->references('id')
+                ->on('fighters');
+
             $table->timestamps();
         });
     }

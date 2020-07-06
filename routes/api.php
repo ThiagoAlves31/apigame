@@ -14,14 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('fighter','Api\FighterController');
-
-/* Route::namespace('Api')->name('api.')->group(function(){
-    Route::prefix('fighter')->group(function(){
-        Route::get('/','FighterController@index')->name('fighters_index');
+Route::namespace('Api')->name('api.')->group(function(){
+    Route::prefix('fighters')->group(function(){
+        Route::get('/','FighterController@index')->name('Fighters_index');
+        //Route::post('/','BattlerController@create')->name('blattes_create');
     });
 });
-*/
 
 Route::namespace('Api')->name('api.')->group(function(){
     Route::prefix('battles')->group(function(){

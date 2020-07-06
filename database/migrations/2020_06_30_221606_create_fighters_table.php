@@ -21,13 +21,9 @@ class CreateFightersTable extends Migration
             $table->integer('agility');
             $table->string('specie');
             $table->integer('battles')->default(0);
-            $table->integer('wins')->default(0);;
-            $table->integer('loss')->default(0);;
-
-        /*     $table->unsignedBigInteger('weapon_id');
-            $table->foreign('weapon_id')
-                ->references('id')
-                ->on('weapons'); */
+            $table->integer('wins')->default(0);
+            $table->integer('loss')->default(0);
+            $table->integer('weapon_id');
 
             $table->timestamps();
         });

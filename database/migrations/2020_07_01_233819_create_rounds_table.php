@@ -16,16 +16,11 @@ class CreateRoundsTable extends Migration
         Schema::create('rounds', function (Blueprint $table) {
             $table->id();
             $table->integer('round_number');
-            $table->integer('action');
-            $table->integer('value_dice_human');
-            $table->integer('value_dice_orc');
-            $table->integer('attack')->nullable();
-
-            $table->integer('battles_id')->unsigned();
-            $table->foreign('id')
-                  ->references('id')
-                  ->on('battles')
-                  ->onDelete('cascade');
+            $table->integer('init_life_human');
+            $table->integer('final_life_human')->default(0);
+            $table->integer('init_life_orc');
+            $table->integer('final_life_orc')->default(0);
+            $table->integer('battles_id');;
                   
             $table->timestamps();
         });
