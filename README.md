@@ -14,7 +14,7 @@ git clone https://github.com/ThiagoAlves31/apigame.git
 cd apigame
 ```
 ```
-cp .env-example .env
+cp .env.example .env
 ```
 
 #### Iniciar container:
@@ -29,13 +29,11 @@ docker exec -it apigame-docker-php-fpm bash
 #### A partir de agora já estamos dentro do container.
 Vamos adicionar permissão nos Logs, por ser ambiente de teste vai ser 777 mesmo.
 ```
-chmod -R 777 storage/*
+chmod -R 777 storage/* && composer update
 ```
 Criar tabelas e adicionar dados fictícios.
 ```
-php artisan key:generate
-php artisan migrate
-php artisan db:seed
+php artisan key:generate && php artisan migrate && php artisan db:seed
 
 Pronto, já estamos com o ambiente funcionando
 Basta apenas acessar http://localhost:8080/api/fighters
