@@ -16,7 +16,7 @@ cd apigame
 ```
 cp .env-example .env
 ```
-```
+
 #### Iniciar container:
 
 ```
@@ -39,6 +39,7 @@ php artisan db:seed
 
 Pronto, já estamos com o ambiente funcionando
 Basta apenas acessar http://localhost:8080/api/fighters
+```
 
 ### Utilizando API
 ```
@@ -47,11 +48,14 @@ GET - http://localhost:8080/api/weapons     - Mostra as armas disponiveis
 GET - http://localhost:8080/api/rounds      - Todas as rodadas de todas as batalhas
 GET - http://localhost:8080/api/rounds/1    - Todas as rodadas da batalha com id 1
 GET - http://localhost:8080/api/battles     - Todas as batalha
+```
 
 #Iniciando uma batalha
+```
+
 Utilizar alguma ferramenta de RESTful, Postman por exemplo
 
-POST http://localhost:8080/api/battles - Passando como parametros no bay da requisição (Key-Value) orc_id e human_id
+POST http://localhost:8080/api/battles - Passando como parametros no body da requisição (Key-Value) orc_id e human_id
 Exemplo
 {
     "orc_id":1
@@ -69,8 +73,10 @@ Após a requisição irá retornar a batalha que foi criada, com abaixo;
     "win_id": null,
     "rounds": null,
 }
+```
 
 #Iniciando uma batalha 
+```
 POST http://localhost:8080/api/rounds/6  - No caso o 6 é o id da batalha criada anteriormente. 
 
 Cada POST realizado será uma rodada da luta sempre retornando algo como:
