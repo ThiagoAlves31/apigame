@@ -16,8 +16,14 @@ class RoundController extends Controller
     public $battle;
     public $battle_id;
     
-    public function index()
+    public function index($idBattle = null)
     {   
+        if($idBattle){
+            $rounds = Round::firstWhere('battles_id',$idBattle);
+            if($rounds)
+                return response()->json($rounds,200);
+        }
+
         $rounds = Round::all();
         if(!$rounds->isEmpty())
             return response()->json($rounds,200);

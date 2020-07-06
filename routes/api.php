@@ -31,6 +31,7 @@ Route::namespace('Api')->name('api.')->group(function(){
 Route::namespace('Api')->name('api.')->group(function(){
     Route::prefix('rounds')->group(function(){
         Route::get('/','RoundController@index')->name('rounds_index');
+        Route::get('/{id}','RoundController@index')->name('rounds_index');
         Route::post('/{battle_id}','RoundController@create')->name('rounds_create');
     });
 });

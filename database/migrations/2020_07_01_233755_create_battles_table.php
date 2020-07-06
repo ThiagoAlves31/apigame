@@ -29,8 +29,8 @@ class CreateBattlesTable extends Migration
                 ->on('fighters');
 
             $table->string('win')->nullable();
-            $table->integer('win_id')->unsigned()->nullable();;
-            $table->integer('rounds')->unsigned()->nullable();;
+            $table->integer('win_id')->unsigned()->nullable();
+            $table->integer('rounds')->unsigned()->nullable();
             
             $table->timestamps();
         });
